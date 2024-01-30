@@ -39,10 +39,10 @@ def main(me=['keyan9329@gmail.com']):
 	recipient = [id[0] for id in mail_id]
 	subject = f'Today Day Order {today}'
 	message = f'Day {day_order} order:\n' 
-	suffices = ['st', 'nd', 'th']
+	suffices = ['st', 'nd', 'rd', 'th']
 		
 	for i in range(5):
-		suffix = suffices[min(i, 2)]
+		suffix = suffices[min(i, 3)]
 		message += f'\t{str(i+1)}{suffix} period - {periods[i]}\n'
 			
 	mailer.send(recipient, subject, message) 
