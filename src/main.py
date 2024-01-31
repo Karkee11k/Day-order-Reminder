@@ -39,7 +39,7 @@ def main(me=['keyan9329@gmail.com']):
 	print(API_KEY) 
 	print(MAIL_ID) 
 	print(PASSWORD)
-	return
+	#return
 	sheet = GSheet(SHEET_ID, API_KEY) 
 	mailer = GMailer(MAIL_ID, PASSWORD)
 	calendar = sheet.fetch('AGAC Calendar') 
