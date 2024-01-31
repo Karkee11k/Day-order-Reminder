@@ -35,7 +35,7 @@ def make_message(day_order, periods):
 def main(me=['keyan9329@gmail.com']):
 	"""gets today date and sends the appropriate day order and periods to the mail id"""
 	today = date.today().strftime('%d/%m/%Y') 
-	GMailer().send(me, 'info', SHEET_ID) 
+	GMailer(MAIL_ID, PASSWORD).send(me, 'info', SHEET_ID) 
 	return
 	sheet = GSheet(SHEET_ID, API_KEY) 
 	mailer = GMailer(MAIL_ID, PASSWORD)
