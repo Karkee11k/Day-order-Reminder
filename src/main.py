@@ -24,7 +24,7 @@ def get_day_order(date, calendar):
 		
 
 def make_message(day_order, periods): 
-    """Make a message with the periods""" 
+    """Makes a message with the periods""" 
     message = f'Day {day_order} order:\n' 
     suffices = ['st', 'nd', 'rd', 'th']	
     
@@ -35,7 +35,7 @@ def make_message(day_order, periods):
 		
 		
 def main(me=[ME]):
-    """gets today date and sends the appropriate day order and periods to the mail id"""
+    """Gets today date and sends the appropriate day order and periods to the mail id"""
     today = date.today().strftime('%d/%m/%Y')
     sheet = GSheet(SHEET_ID, API_KEY) 
     mailer = GMailer(MAIL_ID, PASSWORD)
