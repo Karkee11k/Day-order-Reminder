@@ -11,6 +11,7 @@ SHEET_ID = os.getenv('SHEET_ID')
 API_KEY = os.getenv('API_KEY') 
 MAIL_ID = os.getenv('MAIL_ID') 
 PASSWORD = os.getenv('PASSWORD')
+ME = os.getenv('ME')
 
 
 def get_day_order(date, calendar): 
@@ -32,7 +33,7 @@ def make_message(day_order, periods):
     return message	
 		
 		
-def main(me=['keyan9329@gmail.com']):
+def main(me=[ME]):
 	"""gets today date and sends the appropriate day order and 
 	periods to the mail id"""
 	today = date.today().strftime('%d/%m/%Y') 
