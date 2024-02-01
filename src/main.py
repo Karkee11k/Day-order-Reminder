@@ -1,6 +1,7 @@
 import os
 from datetime import date 
 from dotenv import load_dotenv
+
 from gsheets import GSheet 
 from send_email import GMailer
 
