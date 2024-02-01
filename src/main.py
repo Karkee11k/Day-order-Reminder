@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from gsheets import GSheet 
 from send_email import GMailer
 
-"""loading environment variables"""
+"""Loading environment variables"""
 load_dotenv('.env') 
 
 SHEET_ID = os.getenv('SHEET_ID') 
@@ -23,7 +23,7 @@ def get_day_order(date, calendar):
 		
 
 def make_message(day_order, periods): 
-    """Make a message with the periods""" 
+    """Makes a message with the periods""" 
     message = f'Day {day_order} order:\n' 
     suffices = ['st', 'nd', 'rd', 'th']	
     
@@ -34,7 +34,7 @@ def make_message(day_order, periods):
 		
 		
 def main(me=[ME]):
-	"""gets today date and sends the appropriate day order and 
+	"""Gets today date and sends the appropriate day order and 
 	periods to the mail id"""
 	today = date.today().strftime('%d/%m/%Y') 
 	sheet = GSheet(SHEET_ID, API_KEY) 
