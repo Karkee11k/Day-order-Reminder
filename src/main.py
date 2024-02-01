@@ -5,7 +5,7 @@ from gsheets import GSheet
 from send_email import GMailer
 
 """Loading environment variables"""
-load_dotenv('.env') 
+load_dotenv() 
 
 SHEET_ID = os.getenv('SHEET_ID') 
 API_KEY = os.getenv('API_KEY') 
