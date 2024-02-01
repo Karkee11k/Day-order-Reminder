@@ -8,7 +8,8 @@ from send_email import GMailer
 """loading environment variables"""
 load_dotenv() 
 
-SHEET_ID = os.getenv('SHEET_ID') 
+SHEET_ID = os.get
+env('SHEET_ID') 
 API_KEY = os.getenv('API_KEY') 
 MAIL_ID = os.getenv('MAIL_ID') 
 PASSWORD = os.getenv('PASSWORD')
@@ -17,7 +18,7 @@ ME = os.getenv('ME')
 
 def get_day_order(date, calendar): 
     """Gives the day order, if date is a working day, else None"""
-    for row in calendar:
+    for row in calendar: 
 	if row[0] != date:
 	    continue 
 	return row[2] if 'y' in row[1] else None
