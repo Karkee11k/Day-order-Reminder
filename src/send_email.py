@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.header import Header 
 
 class GMailer: 
-    """class to send mail""" 
+    """Class to send mail""" 
 	
     def __init__(self, mail_id, password): 
 	"""Sets the mail id and the password"""
