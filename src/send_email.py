@@ -12,7 +12,7 @@ class GMailer:
 	self.__password = password
 		
     def send(self, recipients, subject, message): 
-	"""sends the message to the given recipients"""
+	"""Sends the message to the given recipients"""
 	email = MIMEMultipart()
 	email['From'] = self.__from
 	email['To'] = ', '.join(recipients)
