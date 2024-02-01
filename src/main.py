@@ -20,8 +20,8 @@ def get_day_order(date, calendar):
     """Gives the day order, if date is a working day, else None"""
     for row in calendar:
 	    if row[0] != date:
-		    continue
-            return row[2] if 'y' in row[1] else None
+		    continue 
+	    return row[2] if 'y' in row[1] else None
 		
 
 def make_message(day_order, periods): 
