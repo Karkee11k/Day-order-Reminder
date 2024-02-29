@@ -23,7 +23,6 @@ def get_day_order(date, calendar):
         return row[2] if 'y' in row[1] else None
         
 		
-
 def make_message(day_order, periods, staffs): 
     """Makes a message with the periods""" 
     message = f'Day {day_order} order:\n' 
@@ -59,8 +58,8 @@ def main(me=[ME]):
     periods = sheet.fetch(_range)[0]              # classes for the day order
     _range = f'Staffs!A{day_order}:E{day_order}'  # staffs range for the day order 
     staffs = sheet.fetch(_range)[0]               # staffs for the day order
-    _range = 'Mail ID!A1:A1'                      # range for the mail id
-    mail_id = sheet.fetch(_range)                 # Student's mail id
+    _range = 'Mail ID!A:A'                        # range for the mail id
+    mail_id = sheet.fetch(_range)                 # student's mail id
 		
     # if any of them is empty, sends an info and terminates the program
     if not periods or not mail_id or not staffs:
