@@ -70,7 +70,6 @@ def main(me=[ME]):
     recipient = [id[0] for id in mail_id]
     subject = f'Today Day Order {today}'
     message = make_message(day_order, periods, staffs) 	
-    print(message)	
     mailer.send(recipient, subject, message)      # mail sent	    
 
 
