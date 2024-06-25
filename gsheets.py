@@ -12,32 +12,29 @@ from googleapiclient.discovery import build
 from typing import List
 
 
-class GSheet: 
-	"""Class to read from public Google Sheets using Google Sheets API.""" 
-	
-	def __init__(self, sheet_id: str, api_key: str) -> None: 
-		"""Initailizes the GSheet with the spreadsheet ID, API key and
-		builds the service.
+class GSheet:
+	"""A class to read public Google Sheets using Google Sheets API."""
+
+	def __init__(self, sheet_id: str, api_key: str) -> None:
+		"""Initializes the GSheet with spreadsheet ID and API key.
 		
 		Args:
-			sheet_id (str): The ID of the Google Sheets spreadsheet.
-			api_key (str): The API key used to authenticate with the
-			Google Sheets API.
+			sheet_id (str): The spreadsheet ID.
+			api_key (str): The API key used to authenticate with Google Sheets API.
 		"""
-		self.__spreadsheetId = sheet_id
-		self.__service = build('sheets', 'v4', developerKey=api_key)  
+		self.__sheet_id = sheet_id
+		self.__service = build('sheets', 'v4', developerKey=api_key)
 
-
-	def fetch(self, sheet_range: str) -> List[List[str]]: 
-		"""Fetches and Returns the sheet's data in the specified range.
+	
+	def fetch(self, sheet_range: str) -> List[List[str]]:
+		"""Returns the sheet's data in the given range.
 		
 		Args:
-			sheet_range (str): The range of cells to retrieve data from,
-			e.g., 'Sheet!A1:B2'.
+			sheet_range (str): The range of cells to retrieve date.
 
 		Returns:
-			list: The list of data from the specified range.
+			list: List of data in the given range.
 		"""
 		sheet = self.__service.spreadsheets()
-		result = sheet.values().get(spreadsheetId=self.__spreadsheetId, range=sheet_range).execute()	
-		return result.get("values", [])
+		result = sheet.values().get(spreadsheetId=self.__sheet_id, range=sheet_range).execute()
+		return result.get('values', [])
